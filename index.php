@@ -19,7 +19,7 @@
 
     <body>
         <div id="map">
-            <!-- Map disini -->
+            <!-- Map akan tampil disini -->
         </div>
     </body>
 
