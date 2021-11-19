@@ -39,7 +39,7 @@
         geojsonLayer.addTo(mymap);
 
         function getColor(d) {
-            return d == 'Plered' ? '#800026':'FFEDA0';
+            return d == 'Plered' ? '#800026':'#FFEDA0';
         };
 
         function mystyle(feature) {
