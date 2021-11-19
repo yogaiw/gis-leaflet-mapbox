@@ -21,37 +21,37 @@
         <div id="map">
             <!-- Map akan tampil disini -->
         </div>
-    </body>
 
-    <script>
-        var mymap = L.map('map').setView([-6.523598784711379, 107.38833670906958], 10);
-        var geojsonLayer = new L.GeoJSON.AJAX("purwakarta.geojson",{style:mystyle});
+        <script>
+            var mymap = L.map('map').setView([-6.523598784711379, 107.38833670906958], 10);
+            var geojsonLayer = new L.GeoJSON.AJAX("purwakarta.geojson",{style:mystyle});
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoieW9nYWl3IiwiYSI6ImNrdzRleXRyYzBlcjcyeWxqbmZ1OXU2MDAifQ.k_15Xu10uLIhW9C_Ila4ig'
-        }).addTo(mymap);
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoieW9nYWl3IiwiYSI6ImNrdzRleXRyYzBlcjcyeWxqbmZ1OXU2MDAifQ.k_15Xu10uLIhW9C_Ila4ig'
+            }).addTo(mymap);
 
-        geojsonLayer.addTo(mymap);
+            geojsonLayer.addTo(mymap);
 
-        function getColor(d) {
-            return d == 'Plered' ? '#800026':'#FFEDA0';
-        };
-
-        function mystyle(feature) {
-            return {
-                fillColor: getColor(feature.properties.WADMKC),
-                weight: 2,
-                opacity: 1,
-                color: 'white',
-                dashArray: '3',
-                fillOpacity: 0.7
+            function getColor(d) {
+                return d == 'Plered' ? '#800026':'#FFEDA0';
             };
-        };
-    </script>
 
+            function mystyle(feature) {
+                return {
+                    fillColor: getColor(feature.properties.WADMKC),
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7
+                };
+            };
+        </script>
+        
+    </body>
 </html>
